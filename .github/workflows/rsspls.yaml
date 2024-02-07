@@ -1,0 +1,22 @@
+name: Generate rss files
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 7 * * *'
+
+jobs:
+  rsspls:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Generate rss
+        run: ./rsspls -c feeds.toml -o .
+      - name: Commit
+        run: |
+          git config user.name rsspls
+          git config user.email 'rsspls-ci@noreply.github.com'
+          git add .
+          git commit -m "ci: Update feeds"
+      - name: Push
+        run: git push origin
