@@ -1,5 +1,4 @@
 [rsspls]
-output = "/tmp"
 
 [[feed]]
 title = "vitapedia.pl"
@@ -10,6 +9,6 @@ url = "https://vitapedia.pl"
 item = "li.list-results__item"
 heading = "h3"
 link = "a"
-summary ="a div ul li:nth-child(2)"
+summary = "a div ul li:nth-child(2)"
 # albo opis
 # summary = "a div p"

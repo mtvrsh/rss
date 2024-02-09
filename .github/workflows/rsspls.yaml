@@ -17,6 +17,6 @@ jobs:
           git config user.name rsspls
           git config user.email 'rsspls-ci@noreply.github.com'
           git add .
-          git commit -m "ci: Update feeds"
+          git commit -m "ci: Update feeds" || true
       - name: Push
         run: git push origin
